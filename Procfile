@@ -1,1 +1,1 @@
-web: gunicorn JeremySite:app
+web: gunicorn JeremySite:API
