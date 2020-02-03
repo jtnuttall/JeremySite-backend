@@ -1,1 +1,1 @@
-web: gunicorn JeremySite:API
+web: gunicorn JeremySite:wsgi
