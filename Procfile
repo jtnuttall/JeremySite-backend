@@ -1,1 +1,1 @@
-web: gunicorn JeremySite.wsgi
+web: gunicorn JeremySite:app
