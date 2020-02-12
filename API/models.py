@@ -10,7 +10,7 @@ class Experience(models.Model):
 	descriptions = ArrayField(models.CharField(max_length=250, blank=False))
 	priority = models.IntegerField(default=None, blank=True, null=True)
 	date_started = models.DateTimeField(default=timezone.now)
-	date_ended = models.dateTimeField(default=timezone.now, blank=True, null=True)
+	date_ended = models.DateTimeField(default=timezone.now, blank=True, null=True)
 
 	created_at = models.DateTimeField(editable=False, default=timezone.now)
 	updated_at = models.DateTimeField(default=timezone.now)

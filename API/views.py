@@ -10,3 +10,9 @@ class ProjectList(mixins.ListModelMixin, generics.GenericAPIView):
 
 	def get(self, request, *args, **kwargs):
 		return self.list(request, *args, **kwargs)
+
+class ProjectDetails(mixins.RetrieveModelMixin, generics.GenericAPIView):
+	serializer_class = ProjectSerializer
+
+	def get(self, request, *args, **kwargs):
+		return self.retrieve(request, *args, **kwargs)
