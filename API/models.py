@@ -7,6 +7,7 @@ class Experience(models.Model):
 	organization = models.CharField(max_length=100)
 	synopsis = models.CharField(max_length=250)
 	descriptions = ArrayField(models.CharField(max_length=250, blank=False))
+	priority = models.IntegerField(default=-1)
 
 # Create your models here.
 class Project(models.Model):
