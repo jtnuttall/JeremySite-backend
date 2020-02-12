@@ -7,16 +7,16 @@ class Experience(models.Model):
 	organization = models.CharField(max_length=100)
 	synopsis = models.CharField(max_length=250)
 	descriptions = ArrayField(models.CharField(max_length=250, blank=False))
-	priority = models.IntegerField(default=-1)
+	priority = models.IntegerField(default=None, blank=True, null=True)
 
 # Create your models here.
 class Project(models.Model):
 	name = models.CharField(max_length=50)
 	synopsis = models.CharField(max_length=250)
 	description = models.TextField()
-	example = models.CharField(max_length=400, default=None)
+	example = models.CharField(max_length=400, default=None, blank=True, null=True)
 	git = models.CharField(max_length=400)
-	priority = models.IntegerField(default=-1)
+	priority = models.IntegerField(default=None, blank=True, null=True)
 
 	class ProgrammingLanguage(models.TextChoices):
 		c = 'C', _('C')
