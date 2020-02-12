@@ -13,7 +13,7 @@ class Experience(models.Model):
 class Project(models.Model):
 	name = models.CharField(max_length=50)
 	synopsis = models.CharField(max_length=250)
-	description = models.TextField()
+	description = models.TextField(default=None, blank=True, null=True)
 	example = models.CharField(max_length=400, default=None, blank=True, null=True)
 	git = models.CharField(max_length=400)
 	priority = models.IntegerField(default=None, blank=True, null=True)
