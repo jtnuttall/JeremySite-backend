@@ -19,6 +19,8 @@ from django.urls import path
 from django.contrib.staticfiles.views import serve
 from django.views.generic import RedirectView
 
+admin.autodiscover()
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', serve, kwargs={'path': 'index.html'}),
