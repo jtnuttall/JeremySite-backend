@@ -6,6 +6,7 @@ from django import forms
 class ExperienceAdmin(admin.ModelAdmin, DynamicArrayMixin):
 	list_display = (
 		'title',
+		'priority',
 		'organization',
 		'created_at',
 		'updated_at',
@@ -17,6 +18,7 @@ admin.site.register(Experience, ExperienceAdmin)
 class ProjectAdmin(admin.ModelAdmin):
 	list_display = (
 		'name',
+		'priority',
 		'synopsis',
 		'created_at',
 		'updated_at',
