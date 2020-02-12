@@ -43,6 +43,7 @@ class Project(models.Model):
 		python2 = 'PY2', _('Python 2')
 		python3 = 'PY3', _('Python 3')
 		php = 'PHP', _('PHP')
+		various = 'VAR', _('Various')
 
 	language = models.CharField(
 		max_length=3,
