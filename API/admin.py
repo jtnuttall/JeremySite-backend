@@ -4,8 +4,22 @@ from django_better_admin_arrayfield.admin.mixins import DynamicArrayMixin
 from django import forms
 
 class ExperienceAdmin(admin.ModelAdmin, DynamicArrayMixin):
-	pass
+	list_display = (
+		'tile',
+		'organization',
+		'created_at',
+		'updated_at',
+	)
 
 admin.site.register(Experience, ExperienceAdmin)
 
-admin.site.register(Project)
+
+class ProjectAdmin(admin.ModelAdmin):
+	list_display = (
+		'name',
+		'synopsis',
+		'created_at',
+		'updated_at',
+	)
+
+admin.site.register(Project, ProjectAdmin)

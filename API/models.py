@@ -8,6 +8,9 @@ class Experience(models.Model):
 	synopsis = models.CharField(max_length=250)
 	descriptions = ArrayField(models.CharField(max_length=250, blank=False))
 	priority = models.IntegerField(default=None, blank=True, null=True)
+	
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 # Create your models here.
 class Project(models.Model):
@@ -17,6 +20,9 @@ class Project(models.Model):
 	example = models.CharField(max_length=400, default=None, blank=True, null=True)
 	git = models.CharField(max_length=400)
 	priority = models.IntegerField(default=None, blank=True, null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 	class ProgrammingLanguage(models.TextChoices):
 		c = 'C', _('C')
