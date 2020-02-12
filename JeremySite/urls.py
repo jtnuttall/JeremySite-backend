@@ -18,11 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.staticfiles.views import serve
 from django.views.generic import RedirectView
+from API import views
 
 admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/projects/', views.ProjectList.as_view()),
+    # path('api/projects/<int:pk>/', views.ProjectDetail.as_view()),
     url(r'^$', serve, kwargs={'path': 'index.html'}),
     url(r'^(?!/?static/)(?!/?media/)(?P<path>.*\..*)$',
         RedirectView.as_view(url='/static/%(path)s', permanent=False)),

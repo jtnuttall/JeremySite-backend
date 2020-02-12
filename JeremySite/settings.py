@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django_better_admin_arrayfield.apps.DjangoBetterAdminArrayfieldConfig',
+    'rest_framework',
     'API',
 ]
 
