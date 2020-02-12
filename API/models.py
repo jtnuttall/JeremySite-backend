@@ -42,6 +42,7 @@ class Project(models.Model):
 		scheme = 'SC', _('Scheme')
 		python2 = 'PY2', _('Python 2')
 		python3 = 'PY3', _('Python 3')
+		php = 'PHP', _('PHP')
 
 	language = models.CharField(
 		max_length=3,
@@ -57,6 +58,7 @@ class Project(models.Model):
 		django = 'DJ', _('Django')
 		djangorestframework = 'DJR', _('Django Rest Framework')
 		ember = 'EM', _('EmberJS')
+		laravel = 'LV', _('Laravel')
 
 	framework = models.CharField(
 		max_length=3,
