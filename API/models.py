@@ -53,7 +53,9 @@ class Project(models.Model):
 	framework = models.CharField(
 		max_length=3,
 		choices=Framework.choices,
-		default=None
+		default=None,
+		blank=True,
+		null=True,
 	)
 
 
