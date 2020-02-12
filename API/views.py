@@ -12,6 +12,7 @@ class ProjectList(mixins.ListModelMixin, generics.GenericAPIView):
 		return self.list(request, *args, **kwargs)
 
 class ProjectDetails(mixins.RetrieveModelMixin, generics.GenericAPIView):
+	queryset = Project.objects.all()
 	serializer_class = ProjectSerializer
 
 	def get(self, request, *args, **kwargs):
