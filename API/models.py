@@ -59,6 +59,7 @@ class Project(models.Model):
 		djangorestframework = 'DJR', _('Django Rest Framework')
 		ember = 'EM', _('EmberJS')
 		laravel = 'LV', _('Laravel')
+		unity = 'UN', _('Unity')
 
 	framework = models.CharField(
 		max_length=3,
