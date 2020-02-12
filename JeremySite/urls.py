@@ -24,8 +24,13 @@ admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('api/experiences/', views.ExperienceList.as_view()),
+    path('api/experiences/<int:pk>/', views.ExperienceDetails.as_view()),
+
     path('api/projects/', views.ProjectList.as_view()),
     path('api/projects/<int:pk>/', views.ProjectDetails.as_view()),
+
     url(r'^$', serve, kwargs={'path': 'index.html'}),
     url(r'^(?!/?static/)(?!/?media/)(?P<path>.*\..*)$',
         RedirectView.as_view(url='/static/%(path)s', permanent=False)),
