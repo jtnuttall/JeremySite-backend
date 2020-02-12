@@ -50,7 +50,6 @@ class Project(models.Model):
 	)
 
 	class Framework(models.TextChoices):
-		none = 'NO', _('None')
 		angular = 'NG', _('Angular')
 		angularJS = 'NGJ', _('AngularJS')
 		elm_arch = 'EA', _('Elm Architecture')
