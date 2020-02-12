@@ -13,12 +13,6 @@ class Experience(models.Model):
 	created_at = models.DateTimeField(editable=False, default=timezone.now)
 	updated_at = models.DateTimeField(default=timezone.now)
 
-	def save(self, *args, **kwargs):
-		''' On save, update timestamps '''
-		if not self.id:
-			self.created_at = timezone.now()
-		self.updated_at = timezone.now()
-
 # Create your models here.
 class Project(models.Model):
 	name = models.CharField(max_length=50)
@@ -70,12 +64,5 @@ class Project(models.Model):
 		blank=True,
 		null=True,
 	)
-
-
-	def save(self, *args, **kwargs):
-		''' On save, update timestamps '''
-		if not self.id:
-			self.created_at = timezone.now()
-		self.updated_at = timezone.now()
 
 
