@@ -5,7 +5,7 @@ from django import forms
 
 class ExperienceAdmin(admin.ModelAdmin, DynamicArrayMixin):
 	list_display = (
-		'tile',
+		'title',
 		'organization',
 		'created_at',
 		'updated_at',

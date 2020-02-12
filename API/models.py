@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django_better_admin_arrayfield.models.fields import ArrayField
+from django.utils import timezone
 
 class Experience(models.Model):
 	title = models.CharField(max_length=100)
@@ -8,9 +9,15 @@ class Experience(models.Model):
 	synopsis = models.CharField(max_length=250)
 	descriptions = ArrayField(models.CharField(max_length=250, blank=False))
 	priority = models.IntegerField(default=None, blank=True, null=True)
-	
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+
+	created_at = models.DateTimeField(editable=False, default=timezone.now)
+	updated_at = models.DateTimeField(default=timezone.now)
+
+	def save(self, *args, **kwargs):
+		''' On save, update timestamps '''
+		if not self.id:
+			self.created_at = timezone.now()
+		self.updated_at = timezone.now()
 
 # Create your models here.
 class Project(models.Model):
@@ -21,8 +28,8 @@ class Project(models.Model):
 	git = models.CharField(max_length=400)
 	priority = models.IntegerField(default=None, blank=True, null=True)
 
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+	created_at = models.DateTimeField(editable=False, default=timezone.now)
+	updated_at = models.DateTimeField(default=timezone.now)
 
 	class ProgrammingLanguage(models.TextChoices):
 		c = 'C', _('C')
@@ -63,5 +70,12 @@ class Project(models.Model):
 		blank=True,
 		null=True,
 	)
+
+
+	def save(self, *args, **kwargs):
+		''' On save, update timestamps '''
+		if not self.id:
+			self.created_at = timezone.now()
+		self.updated_at = timezone.now()
 
 
