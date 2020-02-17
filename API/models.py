@@ -80,6 +80,7 @@ class Skill(models.Model):
 class Publication(models.Model):
 	title = models.CharField(max_length=250)
 	authors = ArrayField(models.CharField(max_length=250, blank=False))
+	abstract = TextField(default=None, blank=True, null=True)
 	journal = models.CharField(max_length=250)
 	publisher = models.CharField(max_length=250, blank=True, null=True)
 	publication_date = models.DateTimeField(default=timezone.now)
