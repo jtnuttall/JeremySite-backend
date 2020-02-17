@@ -34,6 +34,9 @@ urlpatterns = [
     path('api/skills/', views.SkillList.as_view()),
     path('api/skills/<int:pk>/', views.SkillDetails.as_view()),
 
+    path('api/publications', views.PublicationList.as_view()),
+    path('api/publications/<int:pk>/', views.PublicationDetails.as_view()),
+
     url(r'^$', serve, kwargs={'path': 'index.html'}),
     url(r'^(?!/?static/)(?!/?media/)(?P<path>.*\..*)$',
         RedirectView.as_view(url='/static/%(path)s', permanent=False)),

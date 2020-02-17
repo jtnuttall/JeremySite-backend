@@ -67,3 +67,21 @@ class SkillDetails(mixins.RetrieveModelMixin, generics.GenericAPIView):
 
 	def get(self, request, *args, **kwargs):
 		return self.retrieve(request, *args, **kwargs)
+
+"""
+Publication Views
+"""
+
+class PublicationList(mixins.ListModelMixin, generics.GenericAPIView):
+	queryset = Publication.objects.all()
+	serializer_class = PublicationSerializer
+
+	def get(self, request, *args, **kwargs):
+		return self.list(request, *args, **kwargs)
+
+class PublicationDetails(mixins.ListModelMixin, generics.GenericAPIView):
+	queryset = Publication.objects.all()
+	serializer_class = PublicationSerializer
+
+	def get(self, request, *args, **kwargs):
+		return self.retrieve(request, *args, **kwargs)

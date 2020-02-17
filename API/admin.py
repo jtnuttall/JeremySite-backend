@@ -33,3 +33,15 @@ class SkillAdmin(admin.ModelAdmin):
 	)
 
 admin.site.register(Skill, SkillAdmin)
+
+class PublicationAdmin(admin.ModelAdmin, DynamicArrayMixin):
+	list_display = (
+		'title',
+		'authors',
+		'journal',
+		'publisher',
+		'description',
+		'publication_date',
+	)
+
+admin.site.register(Publication, PublicationAdmin)

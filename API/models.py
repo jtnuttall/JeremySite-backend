@@ -76,3 +76,14 @@ class Skill(models.Model):
 
 	created_at = models.DateTimeField(editable=False, default=timezone.now)
 	updated_at = models.DateTimeField(default=timezone.now)
+
+class Publication(models.Model):
+	title = models.CharField(max_length=250)
+	authors = ArrayField(models.CharField(max_length=250, blank=False))
+	journal = models.CharField(max_length=250)
+	publisher = models.CharField(max_length=250, blank=True, null=True)
+	publication_date = models.DateTimeField(default=timezone.now)
+	description = models.TextField(default=None, blank=True, null=True)
+
+	created_at = models.DateTimeField(editable=False, default=timezone.now)
+	updated_at = models.DateTimeField(default=timezone.now)

@@ -38,3 +38,16 @@ class SkillSerializer(serializers.ModelSerializer):
 			'name',
 			'description',
 		]
+
+class PublicationSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = Publication
+		fields = [
+			'id',
+			'title',
+			'authors',
+			'journal',
+			'publisher',
+			'description',
+			'publication_date',
+		]
