@@ -83,6 +83,7 @@ class Publication(models.Model):
 	journal = models.CharField(max_length=250)
 	publisher = models.CharField(max_length=250, blank=True, null=True)
 	publication_date = models.DateTimeField(default=timezone.now)
+	link = models.CharField(max_length=500, null=True)
 	description = models.TextField(default=None, blank=True, null=True)
 
 	created_at = models.DateTimeField(editable=False, default=timezone.now)

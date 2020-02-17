@@ -49,5 +49,6 @@ class PublicationSerializer(serializers.ModelSerializer):
 			'journal',
 			'publisher',
 			'description',
+			'link',
 			'publication_date',
 		]

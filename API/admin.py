@@ -40,8 +40,9 @@ class PublicationAdmin(admin.ModelAdmin, DynamicArrayMixin):
 		'authors',
 		'journal',
 		'publisher',
-		'description',
+		'link',
 		'publication_date',
+		'description',
 	)
 
 admin.site.register(Publication, PublicationAdmin)
