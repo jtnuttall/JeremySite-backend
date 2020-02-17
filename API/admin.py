@@ -25,3 +25,11 @@ class ProjectAdmin(admin.ModelAdmin):
 	)
 
 admin.site.register(Project, ProjectAdmin)
+
+class SkillAdmin(admin.ModelAdmin):
+	list_display = (
+		'name',
+		'description',
+	)
+
+admin.site.register(Skill, SkillAdmin)

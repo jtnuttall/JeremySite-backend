@@ -70,4 +70,9 @@ class Project(models.Model):
 		null=True,
 	)
 
+class Skill(models.Model):
+	name = models.CharField(max_length=100)
+	description = models.TextField(default=None, blank=True, null=True)
 
+	created_at = models.DateTimeField(editable=False, default=timezone.now)
+	updated_at = models.DateTimeField(default=timezone.now)
