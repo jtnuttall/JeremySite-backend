@@ -38,6 +38,9 @@ MIT
 angular-fullpage
 GPL-3.0
 
+angular-pipes
+MIT
+
 core-js
 MIT
 Copyright (c) 2014-2019 Denis Pushkarev
